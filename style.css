@@ -1,0 +1,354 @@
+/* --- Base Styles --- */
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  line-height: 1.8;
+  color: #2c3e50;
+  background-color: #fdfdfd;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+/* --- Layout --- */
+header, main, footer {
+  max-width: 720px; /* 読みやすい横幅 */
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+
+section, article {
+  margin-bottom: 40px;
+}
+
+/* --- Typography --- */
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 15px;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  border-left: 5px solid #2c3e50;
+  padding-left: 12px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 30px;
+  border-bottom: 1px dashed #ccc;
+  display: inline-block;
+  width: 100%;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+strong {
+  background: linear-gradient(transparent 70%, #fff176 70%); /* 控えめなマーカー */
+  padding: 0 2px;
+}
+
+/* --- Lists --- */
+ul {
+  padding-left: 1.5em;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* --- Navigation & Links --- */
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* リンクボタン風（トップページなど） */
+header a, footer a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* --- Utils --- */
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 40px 0;
+}
+
+blockquote {
+  border-left: 3px solid #ddd;
+  margin-left: 0;
+  padding-left: 1.5em;
+  color: #777;
+  font-style: italic;
+}
+
+/* --- Footer --- */
+footer {
+  font-size: 0.9rem;
+  color: #95a5a6;
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+/* --- Table Styles (Experimental Data) --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 40px;
+  font-size: 0.95rem;
+  table-layout: fixed; /* 列の幅を安定させる */
+}
+
+th, td {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 700;
+  color: #2c3e50;
+  width: 30%; /* 項目名の幅を固定 */
+}
+
+/* 偶数行に薄い色をつけて読みやすくする（ゼブラデザイン） */
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* 数字が入るセルを強調したい場合 */
+td.data-value {
+  font-family: "Courier New", Courier, monospace; /* 数字を等幅フォントにしてデータ感を出す */
+  font-weight: bold;
+}
+/* --- Graph Styles --- */
+.graph-section {
+  background: #fdfdfd;
+  padding: 20px;
+  border: 1px solid #eee;
+  margin-bottom: 40px;
+}
+
+.graph-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+svg {
+  width: 100%;
+  height: 200px;
+  overflow: visible;
+}
+
+.graph-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #95a5a6;
+}
+
+.graph-caption {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  text-align: center;
+  margin-top: 10px;
+}
+svg text {
+  font-family: sans-serif;
+  letter-spacing: 0;
+}
+/* --- Log List Styles --- */
+.log-grid {
+  display: grid;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.log-category h3 {
+  font-size: 1.1rem;
+  border-bottom: 1px solid #2c3e50;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.log-list {
+  list-style: none;
+  padding: 0;
+}
+
+.log-list li {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.log-list a {
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.log-list a:hover .log-title {
+  text-decoration: underline;
+}
+
+.log-date {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #95a5a6;
+  min-width: 70px;
+}
+
+.log-title {
+  font-weight: 500;
+  color: #34495e;
+}
+
+.log-status {
+  font-size: 0.7rem;
+  background: #e74c3c;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* --- Essay Graph Styles --- */
+.experimental-graph {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 25px;
+  margin: 30px 0;
+}
+
+.graph-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.graph-caption {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  font-style: italic;
+  text-align: right;
+}
+/* --- Status Summary Styles --- */
+.status-summary {
+  background: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  margin: 20px 0 40px 0;
+  border-radius: 4px;
+}
+
+.status-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.status-item {
+  flex: 1;
+  min-width: 250px;
+}
+
+.status-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #bdc3c7;
+  margin-bottom: 5px;
+}
+
+.status-value {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.status-diff {
+  font-size: 0.85rem;
+  color: #2ecc71; /* 成長を示す緑 */
+}
+
+.status-timestamp {
+  text-align: right;
+  font-size: 0.7rem;
+  color: #7f8c8d;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+/* --- Concept Card Styles --- */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.concept-card {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.concept-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-color: #2c3e50;
+}
+
+.concept-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.concept-card p {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* プロフィールボタン */
+.btn-profile {
+  display: inline-block;
+  padding: 10px 25px;
+  background: #2c3e50;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 2px;
+}
